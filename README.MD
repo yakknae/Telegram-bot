@@ -13,10 +13,9 @@ Un bot de Telegram para realizar conversiones de monedas globales.
 ## Configuración
 1. Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
 
-   ```plaintext
-- Reemplaza tu_token_de_telegram con tu token de Telegram.
+> TELEGRAM_BOT_TOKEN=tu_token_de_telegram
 
-   TELEGRAM_BOT_TOKEN=tu_token_de_telegram
+- Reemplaza tu_token_de_telegram con tu token de Telegram.
 
 ## Comando inicializar bot
 > python -m app.bot
