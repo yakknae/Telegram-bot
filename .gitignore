@@ -1,0 +1,32 @@
+# Ignorar archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entornos virtuales
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignorar archivos de configuración personal
+.env
+api_keys.py
+config.json
+secrets.env
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de IDEs/editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar archivos de pruebas
+*.log
+*.sqlite3
