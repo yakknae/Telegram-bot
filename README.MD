@@ -1,11 +1,11 @@
-# Currency Bot
+# Telegram Bot
 
 Un bot de Telegram para realizar conversiones de monedas globales.
 
 ## Características
 - Conversión de múltiples monedas (ARS, EUR, USD, etc.).
 - Soporte para varios idiomas (ES, EN, BR, etc.).
-- Integración con ExchangeRate-API para tasas de cambio en tiempo real.
+- Integración con DolarApi para tasas de cambio en tiempo real.
 
 ## instalar las dependencias
 > pip install -r requirements.txt
