@@ -46,8 +46,8 @@ menus = {
     "money": {
         "es": (
             "Selecciona una moneda:\n"
-            "/dolar o - Dólar oficial.\n"
-            "/dolar b - Dólar blue.\n"
+            "/dolar_o - Dólar oficial.\n"
+            "/dolar_b - Dólar blue.\n"
             "/euro - Euro.\n"
             "/real_br - Real brasileño.\n"
             "/peso_chl - Peso chileno.\n"
@@ -56,8 +56,8 @@ menus = {
         ),
         "br": (
             "Selecione uma moeda:\n"
-            "/dolar o - Dólar oficial.\n"
-            "/dolar b - Dólar blue.\n"
+            "/dolar_o - Dólar oficial.\n"
+            "/dolar_b - Dólar blue.\n"
             "/euro - Euro.\n"
             "/real_br - Real brasileiro.\n"
             "/peso_chl - Peso chileno.\n"
@@ -66,14 +66,34 @@ menus = {
         ),
         "en": (
             "Select a currency:\n"
-            "/dolar o - Official dollar.\n"
-            "/dolar b - Blue dollar.\n"
+            "/dolar_o - Official dollar.\n"
+            "/dolar_b - Blue dollar.\n"
             "/euro - Euro.\n"
             "/real_br - Brazilian real.\n"
             "/peso_chl - Chilean peso.\n"
             "/peso_uru - Uruguayan peso.\n"
             "/back - Go back to the main menu."
         ),
+    },
+ "price": {
+        "es": {
+            "price_message": "🏦 Precio del {currency}:\n"
+                             "💵 Compra: ${buy:.2f}\n"
+                             "💰 Venta: ${sell:.2f}",
+            "not_found": "No se pudo obtener el precio del {currency}.",
+        },
+        "br": {
+            "price_message": "🏦 Preço do {currency}:\n"
+                             "💵 Compra: ${buy:.2f}\n"
+                             "💰 Venda: ${sell:.2f}",
+            "not_found": "Não foi possível obter o preço do {currency}.",
+        },
+        "en": {
+            "price_message": "🏦 {currency} Price:\n"
+                             "💵 Buy: ${buy:.2f}\n"
+                             "💰 Sell: ${sell:.2f}",
+            "not_found": "Could not get the price of {currency}.",
+        },
     },
 ################################################
     "errors": {

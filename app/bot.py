@@ -7,11 +7,12 @@ from .commands import (
     money_command,
     back_command,
     set_language,
-    dolar_command,
     euro_command,
     real_br_command,
     peso_chl_command,
     peso_uru_command,
+    dolar_o_command,
+    dolar_b_command,
 )
 from telegram.error import TimedOut
 
@@ -47,12 +48,14 @@ def run_bot():
         application.add_handler(CommandHandler("es", lambda update, context: set_language(update, context, "es")))
         application.add_handler(CommandHandler("br", lambda update, context: set_language(update, context, "br")))
         application.add_handler(CommandHandler("en", lambda update, context: set_language(update, context, "en")))
-        application.add_handler(CommandHandler("dolar", dolar_command, filters=filters.COMMAND))
+        application.add_handler(CommandHandler("dolar_o", dolar_o_command))
+        application.add_handler(CommandHandler("dolar_b", dolar_b_command))
         application.add_handler(CommandHandler("euro", euro_command))
         application.add_handler(CommandHandler("real_br", real_br_command))
         application.add_handler(CommandHandler("peso_chl", peso_chl_command))
         application.add_handler(CommandHandler("peso_uru", peso_uru_command))
         
+
         # Iniciar el bot
         application.run_polling()
     except KeyboardInterrupt:

@@ -44,6 +44,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(message)
 
+
 # Comando /language
 async def language_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Validar que update.message exista
@@ -129,13 +130,15 @@ async def currency_command(update: Update, context: ContextTypes.DEFAULT_TYPE, c
         print(f"Comando /{currency_name} recibido")  # Mensaje de depuración
         price = get_dolar_price(currency_type)
         if price:
-            message = (
-                f"📊 {currency_name.capitalize()} Price:\n"
-                f"💵 Buy: ${price['compra']:.2f}\n"
-                f"💰 Sell: ${price['venta']:.2f}"
+            message_template = menus["price"][lang]["price_message"]
+            message = message_template.format(
+                currency = currency_name.capitalize(),
+                buy=price['compra'],
+                sell=price['venta']
             )
         else:
-            message = menus["currency_not_found"][lang].format(currency=currency_name)
+            message_template = menus["price"][lang]["not_found"]
+            message = message_template.format(currency=currency_name)
 
         print(f"Respuesta generada: {message}")  # Mensaje de depuración
         await update.message.reply_text(message)
@@ -151,13 +154,11 @@ async def currency_command(update: Update, context: ContextTypes.DEFAULT_TYPE, c
         await update.message.reply_text(menus["errors"][lang])
 
 # Crear funciones específicas usando la función genérica
-async def dolar_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    tipo = "oficial"
-    if context.args and context.args[0].lower() in ["blue", "b"]:
-        tipo = "blue"
-    elif context.args and context.args[0].lower() in ["oficial", "o"]:
-        tipo = "oficial"
-    await currency_command(update, context, tipo, f"Dólar {tipo.capitalize()}")
+async def dolar_o_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
+    await currency_command(update, context, "oficial", "Dolar Oficial")
+
+async def dolar_b_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
+    await currency_command(update, context, "blue", "Dolar Blue")
 
 async def euro_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await currency_command(update, context, "euro", "Euro")
